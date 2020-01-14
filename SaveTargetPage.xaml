@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SaveTargetPage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SaveTargetPage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:uc="clr-namespace:UiPathTeam.ClovaAI;assembly=UiPathTeam.ClovaAI" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_LinkUrl" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>496,1365</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>620,1972.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SaveTargetPage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="21">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -30,10 +30,11 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPathTeam.ClovaAI</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -52,9 +53,10 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPathTeam.ClovaAI</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SaveTargetPage" sap:VirtualizedContainerService.HintSize="476,1225" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SaveTargetPage" sap:VirtualizedContainerService.HintSize="600,1672.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="linkUrl" />
     </Sequence.Variables>
@@ -63,7 +65,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+    <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="558.4,22.4" sap2010:WorkflowViewState.IdRef="Delay_1">
       <TextExpression.Namespaces>
         <sco:Collection x:TypeArguments="x:String">
           <x:String>System.Activities</x:String>
@@ -109,8 +111,8 @@
         </sap2010:ViewStateManager>
       </sap2010:WorkflowViewState.ViewStateManager>
     </Delay>
-    <ui:CreateDirectory ContinueOnError="False" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="AuditReport" />
-    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:CreateDirectory ContinueOnError="False" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="558.4,85.6" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="AuditReport" />
+    <Assign sap:VirtualizedContainerService.HintSize="558.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[linkUrl]</OutArgument>
       </Assign.To>
@@ -118,24 +120,25 @@
         <InArgument x:TypeArguments="x:String">[in_LinkUrl]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe  코크렙제31호위탁...'" sap:VirtualizedContainerService.HintSize="434,846" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="94702538a7e51dde34df3ba4ab1ae7e6" Selector="&lt;html url='{{linkUrl}}' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe  코크렙제31호위탁...'" sap:VirtualizedContainerService.HintSize="558.4,1292" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="94702538a7e51dde34df3ba4ab1ae7e6" Selector="&lt;html url='{{linkUrl}}' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,700" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524.8,1144.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="RcpNo" />
               <Variable x:TypeArguments="ui:Image" Name="RcpImage" />
+              <Variable x:TypeArguments="uc:ImageInferResult" Name="Result" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -157,7 +160,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[RcpNo]</OutArgument>
               </Assign.To>
@@ -165,7 +168,7 @@
                 <InArgument x:TypeArguments="x:String">[linkUrl.Split("=".ToCharArray).Last]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'HTML '" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[RcpImage]">
+            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'HTML '" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[RcpImage]">
               <ui:TakeScreenshot.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2f97f7ca05a56f92d58b47c583747102" Selector="&lt;webctrl idx='2' tag='HTML' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -177,8 +180,20 @@
                 </ui:Target>
               </ui:TakeScreenshot.Target>
             </ui:TakeScreenshot>
-            <ui:SaveImage DisplayName="Save Image" FileName="[Path.Combine(&quot;AuditReport&quot;, string.Format(&quot;{0}.png&quot;, RcpNo))]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[RcpImage]" />
-            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+            <ui:SaveImage DisplayName="Save Image" FileName="[Path.Combine(&quot;AuditReport&quot;, string.Format(&quot;{0}.png&quot;, RcpNo))]" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[RcpImage]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetClovaOCR workflow" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetClovaOCR.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine("AuditReport", string.Format("{0}.png", RcpNo))]</InArgument>
+                <OutArgument x:TypeArguments="uc:ImageInferResult" x:Key="out_Result">[Result]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <If Condition="[Result.error IsNot Nothing]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Result.timestamp + &quot;  &quot; + Result.requestId]" />
+              </If.Then>
+            </If>
+            <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path.Combine(&quot;AuditReport&quot;, string.Format(&quot;{0}.png&quot;, RcpNo))]" />
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
